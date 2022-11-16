@@ -1,8 +1,6 @@
 #ifndef PARTS_H
 #define PARTS_H
 
-#include <SDL2/SDL_ttf.h>
-
 /*
  * macro definition
  */

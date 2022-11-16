@@ -453,28 +453,6 @@ int clac_offset(int x, int y, int *offset_x, int *offset_y) {
     return 0;
 }
 
-
-int draw_coordinate(SDL_Renderer *renderer, TTF_Font *font) {
-
-    char coordinate[10];
-    int coordinate_x = cursor.map_x;
-    int coordinate_y = cursor.map_y;
-
-    if (coordinate_x < 0) {
-        coordinate_x--;
-    }
-
-    if (coordinate_y < 0) {
-        coordinate_y--;
-    }
-
-    sprintf(coordinate, "%03d %03d", coordinate_x / GRID_SIZE, coordinate_y / GRID_SIZE);
-    display_character_string(renderer, font, coordinate, 695, 100);
-
-    return 0;
-
-}
-
 int draw_filename(SDL_Window *window) {
     char title_name[256] = {0};
 
@@ -585,29 +563,6 @@ int make_box(SDL_Renderer *renderer, int x, int y, int w, int h, int blend, COLO
     }
 
     SDL_RenderFillRect(renderer, &rectangle);
-
-    return 0;
-}
-
-int display_character_string(SDL_Renderer *renderer, TTF_Font *font, char *string, int x, int y) {
-    SDL_Surface *surface;
-    SDL_Texture *texture;
-
-    surface = TTF_RenderUTF8_Blended(font, string, (SDL_Color){255,255,255,255});
-
-    texture = SDL_CreateTextureFromSurface(renderer, surface);
-
-    SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
-
-    int iw,ih;
-    SDL_QueryTexture(texture, NULL, NULL, &iw, &ih);
-
-    SDL_Rect txtRect=(SDL_Rect){0,0,iw,ih};
-    SDL_Rect pasteRect=(SDL_Rect){x,y,iw,ih};
-
-    SDL_RenderCopy(renderer, texture, &txtRect, &pasteRect);
-
-    SDL_FreeSurface(surface);
 
     return 0;
 }

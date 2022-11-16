@@ -1,8 +1,5 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <limits.h>
-#include <SDL2/SDL.h>
-#include <SDL2/SDL_image.h>
+#include "../headers/load_image.h"
 #include "../../parts.h"
 
 int load_image(SDL_Renderer *renderer, SDL_Texture **image_texture, char *filename) {

@@ -1,7 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <limits.h>
-#include <SDL2/SDL.h>
 #include "../headers/load_image.h"
 #include "../../parts.h"
 

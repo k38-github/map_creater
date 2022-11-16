@@ -1,7 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <limits.h>
-#include <SDL2/SDL.h>
 #include "../../load/headers/load_mapchip.h"
 #include "../../parts.h"
 

@@ -1,7 +1,8 @@
-#ifndef DRAW_PALLET_H
-#define DRAW_PALLET_H
+#ifndef DRAW_COODINATE_H
+#define DRAW_COODINATE_H
 
 #include <SDL2/SDL.h>
+#include <SDL2/SDL_ttf.h>
 
 /*
  * macro definition
@@ -14,7 +15,7 @@
 /*
  * prototype declaration
  */
-int draw_pallet(SDL_Renderer *);
+int draw_coordinate(SDL_Renderer *, TTF_Font *);
 
 /*
  * global variable external reference declaration
