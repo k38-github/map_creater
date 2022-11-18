@@ -310,36 +310,6 @@ int get_mapchip_with_key_o(SDL_Renderer *renderer) {
 
 }
 
-int draw_selected_mapchip(SDL_Renderer *renderer) {
-    make_box(renderer, 700, 30, 62, 62, 255, WHITE);
-    make_box(renderer, 702, 32, 58, 58, 255, BLACK);
-
-    SDL_Rect imageRect=(SDL_Rect){0, 0, IMAGE_WIDTH, IMAGE_HEIGHT};
-    SDL_Rect drawRect=(SDL_Rect){715,
-                                 45,
-                                 IMAGE_WIDTH*MAGNIFICATION, IMAGE_HEIGHT*MAGNIFICATION};
-
-    SDL_RenderCopy(renderer, mapchip[select_mapchip].map_image, &imageRect, &drawRect);
-
-
-    return 0;
-}
-
-int draw_selected_outer_periphery(SDL_Renderer *renderer) {
-    make_box(renderer, 700, 170, 62, 62, 255, WHITE);
-    make_box(renderer, 702, 172, 58, 58, 255, BLACK);
-
-    SDL_Rect imageRect=(SDL_Rect){0, 0, IMAGE_WIDTH, IMAGE_HEIGHT};
-    SDL_Rect drawRect=(SDL_Rect){715,
-                                 185,
-                                 IMAGE_WIDTH*MAGNIFICATION, IMAGE_HEIGHT*MAGNIFICATION};
-
-    SDL_RenderCopy(renderer, mapchip[OUTER_PERIPHERY].map_image, &imageRect, &drawRect);
-
-
-    return 0;
-}
-
 int cursor_move(SDL_Event e, SDL_Renderer *renderer) {
 
     int cursor_x = cursor.map_x - cursor.offset_x;
@@ -542,27 +512,6 @@ int load_file(char *file_name) {
     }
 
     fclose(fp);
-
-    return 0;
-}
-
-int make_box(SDL_Renderer *renderer, int x, int y, int w, int h, int blend, COLOR color) {
-
-    SDL_Rect rectangle;
-    SDL_SetRenderDrawBlendMode(renderer, SDL_BLENDMODE_BLEND);
-
-    rectangle.x = x;
-    rectangle.y = y;
-    rectangle.w = w;
-    rectangle.h = h;
-
-    if (color == WHITE) {
-        SDL_SetRenderDrawColor(renderer, 255, 255, 255, blend);
-    } else if (color == BLACK) {
-        SDL_SetRenderDrawColor(renderer, 0, 0, 0, blend);
-    }
-
-    SDL_RenderFillRect(renderer, &rectangle);
 
     return 0;
 }

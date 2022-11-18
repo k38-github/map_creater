@@ -6,9 +6,12 @@
 #include <SDL2/SDL_ttf.h>
 #include "../../function/parts.h"
 #include "../../function/utils/headers/initialize.h"
+#include "../../function/utils/headers/make_box.h"
 #include "../../function/draw/headers/draw_map.h"
 #include "../../function/draw/headers/draw_pallet.h"
 #include "../../function/draw/headers/draw_coodinate.h"
+#include "../../function/draw/headers/draw_selected_mapchip.h"
+#include "../../function/draw/headers/draw_selected_outer_periphery.h"
 #include "../../function/display/headers/display_character_string.h"
 
 /*
@@ -28,15 +31,12 @@ int accept_character_input(SDL_Event, SDL_Renderer *, TTF_Font *, char *, int, i
 int display_load_window(SDL_Event, SDL_Renderer *, TTF_Font *);
 int display_save_window(SDL_Event, SDL_Renderer *, TTF_Font *);
 int display_new_window(SDL_Event, SDL_Renderer *, TTF_Font *);
-int make_box(SDL_Renderer *, int, int, int, int, int, COLOR);
 int load_file(char *);
 int save_file(char *);
 int pallet_move(SDL_Event, SDL_Renderer *);
 int draw_filename(SDL_Window *);
 int draw_outer_periphery(SDL_Renderer *, TTF_Font *);
 int clac_offset(int, int, int *, int *);
-int draw_selected_mapchip(SDL_Renderer *);
-int draw_selected_outer_periphery(SDL_Renderer *);
 int cursor_move(SDL_Event, SDL_Renderer *);
 int place_mapchip(SDL_Point, SDL_Renderer *);
 int place_mapchip_with_key(SDL_Renderer *);
