@@ -1,37 +1,27 @@
-all: map
+PROGNAME := MAPCreater
+MAINSRC := src/main/main/c/main.c
+FUNCSRCDIR := src/main/function
+OUTDIR := build/exec
+OUTOBJSDIR := build/objects
 
-map: initialize.o make_box.o load_mapchip.o load_image.o draw_map.o draw_pallet.o draw_coodinate.o draw_selected_mapchip.o draw_selected_outer_periphery.o display_character_string.o
-	gcc -g -o build/exec/MAPCreater src/main/main/c/main.c src/main/main/headers/main.h build/objects/*.o `sdl2-config --cflags --libs` -lSDL2_image -lSDL2_ttf
+TARGET := map
+SRCS := $(wildcard $(FUNCSRCDIR)/*/c/*.c)
+OBJFILE := $(notdir $(patsubst %.c,%.o,$(SRCS)))
+OBJS := $(addprefix $(OUTOBJSDIR)/,$(OBJFILE))
 
-initialize.o: build
-	gcc -g -c src/main/function/utils/c/initialize.c -o build/objects/initialize.o
+CC = gcc
+SDLLFGS = `sdl2-config --cflags --libs` -lSDL2_image -lSDL2_ttf
 
-make_box.o: build
-	gcc -g -c src/main/function/utils/c/make_box.c -o build/objects/make_box.o
+.PHONY: all build run clean
+all: $(TARGET)
 
-load_mapchip.o: build
-	gcc -g -c src/main/function/load/c/load_mapchip.c -o build/objects/load_mapchip.o
+$(TARGET): $(OBJFILE)
+	$(CC) -g -o $(OUTDIR)/$(PROGNAME) $(MAINSRC) $(OBJS) $(SDLLFGS)
 
-load_image.o: build
-	gcc -g -c src/main/function/load/c/load_image.c -o build/objects/load_image.o
+$(OBJFILE): $(SRCS)
 
-draw_map.o: build
-	gcc -g -c src/main/function/draw/c/draw_map.c -o build/objects/draw_map.o
-
-draw_pallet.o: build
-	gcc -g -c src/main/function/draw/c/draw_pallet.c -o build/objects/draw_pallet.o
-
-draw_coodinate.o: build
-	gcc -g -c src/main/function/draw/c/draw_coodinate.c -o build/objects/draw_coodinate.o
-
-draw_selected_mapchip.o: build
-	gcc -g -c src/main/function/draw/c/draw_selected_mapchip.c -o build/objects/draw_selected_mapchip.o
-
-draw_selected_outer_periphery.o: build
-	gcc -g -c src/main/function/draw/c/draw_selected_outer_periphery.c -o build/objects/draw_selected_outer_periphery.o
-
-display_character_string.o: build
-	gcc -g -c src/main/function/display/c/display_character_string.c -o build/objects/display_character_string.o
+$(SRCS): build
+	$(CC) -c $@ -o $(OUTOBJSDIR)/$(notdir $*).o
 
 build:
 	mkdir -p ./build/exec
