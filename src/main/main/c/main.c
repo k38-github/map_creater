@@ -423,24 +423,6 @@ int clac_offset(int x, int y, int *offset_x, int *offset_y) {
     return 0;
 }
 
-int draw_filename(SDL_Window *window) {
-    char title_name[256] = {0};
-
-    sprintf(title_name, "MAP CREATER(%s)", FILE_NAME);
-    SDL_SetWindowTitle(window, title_name);
-
-    return 0;
-
-}
-
-int draw_outer_periphery(SDL_Renderer *renderer, TTF_Font *font) {
-
-    display_character_string(renderer, font, "OUT_OF_MAP", 680, 250);
-
-    return 0;
-
-}
-
 int save_file(char *file_name) {
     FILE *fp;
     char file[256] = {0};

@@ -3,7 +3,6 @@
 #include "../../display/headers/display_character_string.h"
 #include "../../parts.h"
 
-
 int draw_coordinate(SDL_Renderer *renderer, TTF_Font *font) {
 
     char coordinate[10];
