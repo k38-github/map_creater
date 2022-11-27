@@ -5,8 +5,11 @@
 #include <SDL2/SDL_image.h>
 #include <SDL2/SDL_ttf.h>
 #include "../../function/parts.h"
+#include "../../function/utils/headers/accept_character_input.h"
+#include "../../function/utils/headers/calc_offset.h"
 #include "../../function/utils/headers/initialize.h"
 #include "../../function/utils/headers/make_box.h"
+#include "../../function/utils/headers/pallet_move.h"
 #include "../../function/draw/headers/draw_coodinate.h"
 #include "../../function/draw/headers/draw_filename.h"
 #include "../../function/draw/headers/draw_map.h"
@@ -15,6 +18,9 @@
 #include "../../function/draw/headers/draw_selected_mapchip.h"
 #include "../../function/draw/headers/draw_selected_outer_periphery.h"
 #include "../../function/display/headers/display_character_string.h"
+#include "../../function/display/headers/display_load_window.h"
+#include "../../function/display/headers/display_new_window.h"
+#include "../../function/display/headers/display_save_window.h"
 
 /*
  * macro definition
@@ -29,14 +35,6 @@
 /*
  * prototype declaration
  */
-int accept_character_input(SDL_Event, SDL_Renderer *, TTF_Font *, char *, int, int);
-int display_load_window(SDL_Event, SDL_Renderer *, TTF_Font *);
-int display_save_window(SDL_Event, SDL_Renderer *, TTF_Font *);
-int display_new_window(SDL_Event, SDL_Renderer *, TTF_Font *);
-int load_file(char *);
-int save_file(char *);
-int pallet_move(SDL_Event, SDL_Renderer *);
-int clac_offset(int, int, int *, int *);
 int cursor_move(SDL_Event, SDL_Renderer *);
 int place_mapchip(SDL_Point, SDL_Renderer *);
 int place_mapchip_with_key(SDL_Renderer *);
