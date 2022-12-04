@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
 #include "../headers/save_file.h"
 #include "../../parts.h"
 
@@ -14,7 +15,11 @@ int save_file(char *file_name) {
         i++;
     }
 
-    sprintf(file, "data/%s.map", file_name);
+    char path_name[512];
+    getcwd(path_name, 512);
+    printf("current dir : %s\n", path_name);
+
+    sprintf(file, "./%s.map", file_name);
 
     i = 0;
     while (file[i] != '\0') {

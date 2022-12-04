@@ -7,6 +7,7 @@
 #include "../../function/parts.h"
 #include "../../function/utils/headers/accept_character_input.h"
 #include "../../function/utils/headers/calc_offset.h"
+#include "../../function/utils/headers/cursor_move.h"
 #include "../../function/utils/headers/initialize.h"
 #include "../../function/utils/headers/make_box.h"
 #include "../../function/utils/headers/pallet_move.h"
@@ -35,7 +36,6 @@
 /*
  * prototype declaration
  */
-int cursor_move(SDL_Event, SDL_Renderer *);
 int place_mapchip(SDL_Point, SDL_Renderer *);
 int place_mapchip_with_key(SDL_Renderer *);
 int get_mapchip(SDL_Point, SDL_Renderer *);

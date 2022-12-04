@@ -7,7 +7,7 @@ int load_file(char *file_name) {
     char file[256] = {0};
     int i = 0;
 
-    sprintf(file, "data/%s.map", file_name);
+    sprintf(file, "./%s.map", file_name);
 
     while (file_name[i] != '\0') {
         file_name[i] = tolower((unsigned char)file_name[i]);
