@@ -1,5 +1,5 @@
-#ifndef PALLET_MOVE_H
-#define PALLET_MOVE_H
+#ifndef GET_MAPCHIP_RIGHT_CLICK_H
+#define GET_MAPCHIP_RIGHT_CLICK_H
 
 #include <SDL2/SDL.h>
 #include "../../parts.h"
@@ -15,7 +15,7 @@
 /*
  * prototype declaration
  */
-int pallet_move(SDL_Event, SDL_Renderer *);
+int get_mapchip_right_click(SDL_Point, SDL_Renderer *);
 
 /*
  * global variable external reference declaration

@@ -11,6 +11,13 @@
 #include "../../function/utils/headers/initialize.h"
 #include "../../function/utils/headers/make_box.h"
 #include "../../function/utils/headers/pallet_move.h"
+#include "../../function/utils/headers/place_mapchip.h"
+#include "../../function/utils/headers/place_mapchip_with_key.h"
+#include "../../function/utils/headers/get_mapchip.h"
+#include "../../function/utils/headers/get_mapchip_right_click.h"
+#include "../../function/utils/headers/get_mapchip_with_key.h"
+#include "../../function/utils/headers/get_mapchip_with_key_a.h"
+#include "../../function/utils/headers/get_mapchip_with_key_o.h"
 #include "../../function/draw/headers/draw_coodinate.h"
 #include "../../function/draw/headers/draw_filename.h"
 #include "../../function/draw/headers/draw_map.h"
@@ -36,13 +43,6 @@
 /*
  * prototype declaration
  */
-int place_mapchip(SDL_Point, SDL_Renderer *);
-int place_mapchip_with_key(SDL_Renderer *);
-int get_mapchip(SDL_Point, SDL_Renderer *);
-int get_mapchip_right_click(SDL_Point, SDL_Renderer *);
-int get_mapchip_with_key(SDL_Renderer *);
-int get_mapchip_with_key_a(SDL_Renderer *);
-int get_mapchip_with_key_o(SDL_Renderer *);
 
 /*
  * global variable external reference declaration
