@@ -6,8 +6,8 @@
 #include <SDL2/SDL_ttf.h>
 #include "../headers/main.h"
 
-const int SCREEN_WIDTH = 800;
-const int SCREEN_HEIGHT = 600;
+const int SCREEN_WIDTH = 832;
+const int SCREEN_HEIGHT = 640;
 const int IMAGE_WIDTH = 16;
 const int IMAGE_HEIGHT = 16;
 const int MAGNIFICATION = 2;

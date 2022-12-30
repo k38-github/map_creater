@@ -6,10 +6,10 @@
 int draw_map(SDL_Renderer *renderer){
 
     int x, y;
-    int start_x = cursor.offset_x / GRID_SIZE - 1;
-    int end_x = start_x + SCREEN_WIDTH / GRID_SIZE + 2;
-    int start_y = cursor.offset_y / GRID_SIZE - 1;
-    int end_y = start_y + SCREEN_HEIGHT/ GRID_SIZE + 2;
+    int start_x = cursor.offset_x / GRID_SIZE;
+    int end_x = start_x + SCREEN_WIDTH / GRID_SIZE;
+    int start_y = cursor.offset_y / GRID_SIZE;
+    int end_y = start_y + SCREEN_HEIGHT/ GRID_SIZE;
 
 
     for(y = start_y;y < end_y;y++){
