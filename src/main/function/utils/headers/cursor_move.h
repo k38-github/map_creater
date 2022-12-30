@@ -1,5 +1,5 @@
-#ifndef CLAC_OFFSET_H
-#define CLAC_OFFSET_H
+#ifndef CURSOR_MOVE_H
+#define CURSOR_MOVE_H
 
 #include <SDL2/SDL.h>
 
