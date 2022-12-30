@@ -31,8 +31,8 @@ int number_of_map_image = 0;
 int select_mapchip = 0;
 
 MAPCHIP mapchip[256] = {0};
-CURSOR cursor = {1, 1, 0, 0};
-CURSOR pallet_cursor = {1, 1, 0, 0};
+CURSOR cursor = {0, 0, 0, 0};
+CURSOR pallet_cursor = {0, 0, 0, 0};
 
 CTRL ctrl = CTRL_OFF;
 PALLET_DISPLAY pallet_display = PALLET_DISPLAY_OFF;
