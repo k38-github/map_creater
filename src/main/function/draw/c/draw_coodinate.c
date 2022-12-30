@@ -17,7 +17,7 @@ int draw_coordinate(SDL_Renderer *renderer, TTF_Font *font) {
         coordinate_y--;
     }
 
-    sprintf(coordinate, "%03d %03d", coordinate_x / GRID_SIZE, coordinate_y / GRID_SIZE);
+    sprintf(coordinate, "%03d %03d", (coordinate_x / GRID_SIZE) + 1, (coordinate_y / GRID_SIZE) + 1);
     display_character_string(renderer, font, coordinate, 695, 100);
 
     return 0;
